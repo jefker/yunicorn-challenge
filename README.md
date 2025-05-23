@@ -460,27 +460,6 @@ const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
 - **Type errors**: Run `pnpm typecheck` regularly
 - **Sanity data**: Inspect `data` props in React DevTools
 
-## 📖 Learning Exercises
-
-### Beginner Level
-
-1. **Content Editing**: Change homepage content via Sanity Studio
-2. **Styling**: Modify colors and typography in existing components
-3. **Images**: Replace placeholder images with new assets
-
-### Intermediate Level
-
-1. **New Component**: Create a simple testimonial component
-2. **Form Fields**: Add new fields to the contact form
-3. **Page Modification**: Add a new section to the homepage
-
-### Advanced Level
-
-1. **New Page Type**: Create a complete new page template
-2. **Global Component**: Build a reusable content block
-3. **API Integration**: Extend the form handler with external services
-4. **Animation**: Add custom GSAP animations to components
-
 ## 🚀 Deployment
 
 ### Build Process

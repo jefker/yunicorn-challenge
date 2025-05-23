@@ -1,0 +1,130 @@
+.button {
+  @apply w-full font-semibold relative flex justify-center transition-all duration-300 ease-out;
+
+  & > .button-cta {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  &::before {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Icon added via sanity same color as text */
+  & svg {
+    @apply text-inherit;
+  }
+
+  /* Border with offset */
+  &::before {
+    content: '';
+    @apply absolute inset-y-[-.675rem] inset-x-[-.75rem] pointer-events-none rounded-[inherit] z-[-1] border;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.6s cubic-bezier(.22, 1, 0.36, 1);
+  }
+
+  &[data-action="popup"] & > *{
+    @apply pointer-events-none;
+  }
+}
+
+/* Text & icon */
+.button-text-initial, .button-icon-initial {
+  @apply transition-all duration-300 opacity-100;
+}
+
+.button-text-hover, .button-icon-hover {
+  @apply absolute transition-all duration-300 opacity-0;
+}
+
+
+/*
+ * Button hover
+ */
+.button:hover {
+  & .cta-grid {
+    @apply translate-x-[5%];
+  }
+
+  /* Border with offset being erased right to left */
+  &::before {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+/* Text & icon hover */
+.button:hover {
+  & .button-text-initial {
+    @apply opacity-0 -translate-y-[3rem];
+  }
+
+  & .button-text-hover {
+    @apply opacity-100 -translate-y-[3rem];
+  }
+
+  & .button-icon-initial {
+    @apply opacity-0 translate-x-[2.25rem] -translate-y-[2.25rem];
+  }
+
+  & .button-icon-hover {
+    @apply opacity-100 translate-x-[2.25rem] -translate-y-[2.25rem];
+  }
+}
+
+
+/*
+ * Button variants
+ */
+.button-gold {
+  @apply text-white;
+  background: #A38753 !important;
+
+  &::before {
+    @apply border-[#A38753];
+  }
+}
+
+.button-white {
+  @apply text-[#172329];
+  background: white !important;
+
+  &::before {
+    @apply border-white;
+  }
+}
+
+.button-grey-blue {
+  @apply text-white;
+  background: #303F48 !important;
+
+  &::before {
+    @apply border-[#303F48];
+  }
+}
+
+
+/*
+ * Button sizes
+ */
+.button-size-small {
+  @apply px-[2rem] sm:px-[3rem] py-[1.5rem] text-[2rem];
+}
+
+.button-size-default {
+  @apply px-[2rem] sm:px-[4rem] py-[1.875rem] text-[2.25rem];
+}
+
+.button-size-large {
+  @apply px-[2rem] sm:px-[5rem] py-[2.125rem] text-[2.5rem];
+}
+
+
+/*
+ * Button shapes
+ */
+.button-shape-round {
+  @apply rounded-[3rem];
+}
+
+.button-shape-pill {
+  @apply rounded-full;
+}

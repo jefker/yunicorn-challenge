@@ -1,0 +1,33 @@
+@tailwind utilities;
+
+@layer utilities {
+  .richtext {
+    @apply prose;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+
+    & > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .richtext-center {
+    align-items: center;
+    text-align: center;
+  }
+
+  .richtext-start {
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .richtext-end {
+    align-items: flex-end;
+    text-align: end;
+  }
+}

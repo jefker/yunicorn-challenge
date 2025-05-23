@@ -1,0 +1,130 @@
+.w-full-force {
+  width: 100% !important;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  z-index: 50;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272B2E;
+  border-radius: 4.5rem;
+  border: 0 transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: #393c40;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0);
+}
+
+main {
+  overflow-x: clip;
+  //noinspection CssInvalidPropertyValue
+  text-wrap: balance;
+}
+
+* {
+  min-width: 0;
+  min-height: 0;
+}
+
+:root {
+  --video-border-radius: .5rem;
+  --video-border: none;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+#sanity-visual-editing {
+  position: absolute;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  & div[data-focused] {
+    pointer-events: auto !important;
+  }
+
+  & > div {
+    & div[data-uid="Flex"] {
+      & div[data-uid="Card"] {
+        & > div[data-uid="Text"] {
+          & > span {
+            font-size: 5rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes trustScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-99.5rem);
+  }
+}
+
+.trustScroll-animation {
+  animation: trustScroll 12s linear infinite;
+}
+
+@keyframes weeklyScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 1.25rem));
+  }
+}
+
+.weeklyScroll-animation {
+  animation: weeklyScroll 30s linear infinite;
+
+  @screen lg  {
+    animation: none;
+  }
+}
+
+@keyframes coachesScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.coachesScroll-animation {
+  animation: coachesScroll 15s linear infinite;
+
+  @screen lg  {
+    animation: none;
+  }
+}

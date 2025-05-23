@@ -1,0 +1,21 @@
+.form-control {
+  & input {
+    appearance: none;
+    outline: none;
+    @apply w-full py-[1.75rem] px-[1.5rem] rounded-[.5rem] relative;
+  }
+
+  &.form-light {
+    & input {
+      @apply text-[#303F48] text-opacity-80 border border-[#A6ABA9] border-opacity-80 transition-all duration-200;
+    }
+
+    & input:focus {
+      @apply border-opacity-100 text-opacity-100;
+    }
+
+    & input:hover {
+      @apply border-opacity-100;
+    }
+  }
+}

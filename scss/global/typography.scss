@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@mixin h1 {
+  font-family: var(--gestura), serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+
+  @screen sm {
+    font-size: 5rem;
+  }
+
+  @screen lg {
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@mixin h2 {
+  font-family: var(--gestura), serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+
+  @screen sm {
+    font-size: 5rem;
+  }
+
+  @screen lg {
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@mixin h3 {
+  font-family: var(--gestura), serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+
+  @screen lg {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@mixin h4 {
+  font-family: var(--gestura), serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+@mixin h5 {
+  font-family: var(--gestura), serif;
+  font-size: 2.75rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+@mixin h6 {
+  font-family: var(--gestura), serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+h6 {
+  @include h6;
+}
+
+@layer utilities {
+  .h1 {
+    @include h1;
+  }
+
+  .h2 {
+    @include h2;
+  }
+
+  .h3 {
+    @include h3;
+  }
+
+  .h4 {
+    @include h4;
+  }
+
+  .h5 {
+    @include h5;
+  }
+
+  .h6 {
+    @include h6;
+  }
+
+  .p-normal,
+  body {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    @apply text-[#002533] text-opacity-80;
+
+    @screen lg {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+p {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: 1.2em;
+}
+
+.text-highlight-light {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#A69577] via-[#C1A26C] to-[#E3C898];
+}
+
+.text-highlight-dark {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#685E4C] from-0% via-[#76684D] via-40% to-[#A28550] to-100%;
+}
+
+.richtext p:has(+ hr) {
+  margin-bottom: 0 !important;
+}

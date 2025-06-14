@@ -23,12 +23,12 @@ export const figtree = localFont({
       style: "italic",
     },
     {
-      path: "../app/fonts/figtree/Figtree-Semibold.ttf",
+      path: "../app/fonts/figtree/Figtree-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../app/fonts/figtree/Figtree-SemiboldItalic.ttf",
+      path: "../app/fonts/figtree/Figtree-SemiBoldItalic.ttf",
       weight: "600",
       style: "italic",
     },

@@ -14,7 +14,6 @@ import {IPopup} from "@/sanity/globals/Popups";
 import {Slot} from "@radix-ui/react-slot";
 import Image from "next/image";
 
-import ctaGrid from "@/public/global/cta-grid.svg";
 
 const buttonVariants = cva("button", {
   variants: {
@@ -43,7 +42,7 @@ const buttonVariants = cva("button", {
   defaultVariants: {
     variant: "default",
     size: "lg",
-    shape: "pill",
+    shape: "round",
     action: "none",
   },
 });
@@ -71,15 +70,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        <div className="absolute !w-full !h-full top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 overflow-clip rounded-[inherit]">
-          <Image
-            className="!w-full !h-full object-cover cta-grid transition-transform duration-300"
-            src={ctaGrid}
-            alt=""
-          />
-        </div>
-
-        <span className="button-cta relative z-[4] flex items-center gap-[1rem]">{children}</span>
+        <span className="button-cta relative z-[4] flex items-center gap-[2rem]">{children}</span>
       </Comp>
     );
   }
@@ -101,7 +92,7 @@ const iconMap = {
       </g>
       <defs>
         <clipPath id="clip0_924_8265">
-          <rect width="24" height="24" fill="white" transform="matrix(1 0 0 -1 0.5 24)"/>
+          <rect width="24" height="24" fill="white" transform="none"/>
         </clipPath>
       </defs>
     </svg>

@@ -122,3 +122,22 @@
     z-index: 1;
   }
 }
+
+@layer utilities {
+  .clip-corner-top-right {
+    clip-path: polygon(0 0, calc(100% - 2.5rem) 0, 100% 2.5rem, 100% 100%, 0 100%);
+  }
+
+  .clip-corner {
+    @apply relative z-10 border;
+
+    clip-path: polygon(
+      0 0,
+      calc(100% - 2rem) 0,
+      100% 2rem,
+      100% 100%,
+      2rem 100%,
+      0 calc(100% - 2rem)
+    );
+  }
+}

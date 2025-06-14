@@ -1,6 +1,7 @@
 import type {ImageLoaderProps} from "next/dist/shared/lib/image-config";
 import {IPageLink} from "@/sanity/globals/CTA";
 import {IPopup} from "@/sanity/globals/Popups";
+import { PortableTextBlock } from "sanity";
 
 export interface GROQImage {
   src: string;
@@ -38,11 +39,14 @@ export interface IHeader {
       link: IPageLink;
     }[];
   }[];
+  cta?: GROQButton;
 }
 
 export interface IFooter {
   name: string;
   bigText: string;
+  text: PortableTextBlock;
+  cta: GROQButton;
   menus: {
     menuTitle: string;
     menu: {
@@ -152,11 +156,14 @@ export const HeaderSchema = `->{
       link${GROQPageLinkSchema},
     },
   },
+  cta->${GROQButtonSchema}
 }`;
 
 export const FooterSchema = `->{
   name,
   bigText,
+  text,
+  cta->${GROQButtonSchema},
   menus[]{
     menuTitle,
     menu[]{

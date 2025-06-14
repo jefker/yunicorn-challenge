@@ -19,6 +19,18 @@ export const Footer = defineType({
     }),
 
     defineField({
+      name: "text",
+      title: "Text",
+      type: "richtext",
+    }),
+
+    defineField({
+      name: "cta",
+      title: "CTA",
+      type: "button",
+    }),
+
+    defineField({
       name: 'menus',
       title: 'Menus',
       type: 'array',

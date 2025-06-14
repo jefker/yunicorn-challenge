@@ -1,5 +1,5 @@
 .button {
-  @apply w-full font-semibold relative flex justify-center transition-all duration-300 ease-out;
+  @apply w-full min-w-[-247px] uppercase font-semibold relative flex justify-center transition-all duration-300 ease-out;
 
   & > .button-cta {
     @apply transition-all duration-300 ease-out;
@@ -36,37 +36,39 @@
   @apply absolute transition-all duration-300 opacity-0;
 }
 
+.button-icon-initial, .button-icon-hover {
+  @apply rotate-45;
+}
+
+.button-icon-hover {
+  @apply translate-y-[-2.25rem]
+}
 
 /*
  * Button hover
  */
 .button:hover {
-  & .cta-grid {
-    @apply translate-x-[5%];
-  }
+  @apply shadow-lg shadow-[#ffc65454];
 
-  /* Border with offset being erased right to left */
+  .button-text-initial {
+    @apply scale-105
+  } 
+  .button-icon-initial {
+    @apply scale-110
+  }
+  
   &::before {
-    clip-path: inset(0 0 0 100%);
+    background: linear-gradient(#ffa84400, #ffc554);
   }
 }
 
-/* Text & icon hover */
 .button:hover {
-  & .button-text-initial {
-    @apply opacity-0 -translate-y-[3rem];
-  }
-
-  & .button-text-hover {
-    @apply opacity-100 -translate-y-[3rem];
-  }
-
   & .button-icon-initial {
-    @apply opacity-0 translate-x-[2.25rem] -translate-y-[2.25rem];
+    @apply opacity-100 translate-x-[4.25rem];
   }
 
   & .button-icon-hover {
-    @apply opacity-100 translate-x-[2.25rem] -translate-y-[2.25rem];
+    @apply opacity-100 translate-x-[2.25rem];
   }
 }
 
@@ -75,13 +77,28 @@
  * Button variants
  */
 .button-gold {
-  @apply text-white;
-  background: #A38753 !important;
+  @apply text-[#000C23] relative z-10;
+  background: radial-gradient(at center bottom, #ffc554 0%, #ffa944 100%) !important;
+  border: none;
 
   &::before {
-    @apply border-[#A38753];
+    @apply border-[#ffc554];
+
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(#ffc554, #ffa84400);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
   }
 }
+         
 
 .button-white {
   @apply text-[#172329];
@@ -106,7 +123,7 @@
  * Button sizes
  */
 .button-size-small {
-  @apply px-[2rem] sm:px-[3rem] py-[1.5rem] text-[2rem];
+  @apply px-[2rem] sm:px-[4rem] py-[2rem] text-[2rem];
 }
 
 .button-size-default {
@@ -122,7 +139,7 @@
  * Button shapes
  */
 .button-shape-round {
-  @apply rounded-[3rem];
+  @apply rounded-[0.5rem];
 }
 
 .button-shape-pill {

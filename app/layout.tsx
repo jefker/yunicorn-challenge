@@ -3,15 +3,12 @@ import "@/scss/global/main.scss";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import React, { Suspense } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 import { StaffToolbar } from "@/components/staff-toolbar";
 import { Toaster } from "@/shadcn/ui/sonner";
-import { GoogleTagManager } from '@next/third-parties/google'
-import favicon from "@/public/favicon.svg";
+import favicon from "@/public/social-selling_favicon.svg";
 import { cn } from "@/lib/utils";
-import { gestura } from "@/helpers/gestura";
-import { segoe } from "@/helpers/segoe-ui";
+import { figtree } from "@/helpers/figtree";
+import { degular } from "@/helpers/degular";
 
 export const metadata: Metadata = {
   title: "Lueddemann Investments",
@@ -33,19 +30,17 @@ export default function MainLayout({
       <body
         className={cn(
           "min-h-screen bg-[#F3F4F2] antialiased relative overflow-x-clip font-sans",
-          gestura.variable,
-          segoe.variable,
+          degular.variable,
+          figtree.variable,
         )}
       >
         {children}
-        <Analytics />
         <Suspense>
           <>
             <StaffToolbar isDraftMode={draftMode().isEnabled} />
           </>
         </Suspense>
         <Toaster />
-        <SpeedInsights />
         <div className="hidden">
           <div className="h1 hidden"></div>
           <div className="h2 hidden"></div>
@@ -60,7 +55,6 @@ export default function MainLayout({
           <div className="gradient hidden"></div>
         </div>
       </body>
-      {/*<GoogleTagManager gtmId="" />*/}
     </html>
   );
 }

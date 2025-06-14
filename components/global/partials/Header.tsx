@@ -18,6 +18,7 @@ import dropdownLight from "@/public/global/dropdown-light.svg";
 import dropdownDark from "@/public/global/dropdown-dark.svg";
 import HeaderLogoLight from "@/public/global/logo-white-gradient.svg"
 import HeaderLogoDark from "@/public/global/logo-dark2.svg"
+import { CTAButton } from "@/shadcn/ui/button";
 
 const IconMobileMenuClosed = () => (
   <svg width="41" height="10" viewBox="0 0 41 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -199,7 +200,7 @@ export default function Header({
     return null;
   }
   return (
-    <header className="absolute top-[4rem] lg:top-[5rem] left-0 w-full z-50">
+    <header className="h-[72px] content-center absolute left-0 w-full z-50 outline outline-1 outline-offset-0 outline-white/[.10]">
       <div className={`container flex ${headerType === "main" ? 'justify-between' : 'justify-center'} `}>
         <div className="flex">
           {style === 'dark' ? (
@@ -238,6 +239,14 @@ export default function Header({
             </button>
           </>
         )}
+
+        <div className="flex">
+          {data.cta && (
+            <CTAButton
+              data={data.cta}
+            />
+          )}
+        </div>
       </div>
 
       {mobileMenuContainer && createPortal(<>

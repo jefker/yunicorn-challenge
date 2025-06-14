@@ -237,7 +237,7 @@ const CarouselPrevious = React.forwardRef<
       // @ts-ignore
       size={size}
       className={cn(
-        "!h-[4rem] !lg:h-[6rem] w-auto [&_svg]:!hidden",
+        "!h-[4rem] !lg:h-[6rem] w-auto",
         orientation === "horizontal" ? "" : "rotate-90",
         className
       )}
@@ -268,7 +268,7 @@ const CarouselNext = React.forwardRef<
       // @ts-ignore
       size={size}
       className={cn(
-        "!h-[4rem] !lg:h-[6rem] w-auto [&_svg]:!hidden",
+        "!h-[4rem] !lg:h-[6rem] w-auto",
         orientation === "horizontal" ? "" : "rotate-90",
         className
       )}

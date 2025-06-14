@@ -31,7 +31,7 @@ const config = {
   	fontSize: {
   		xs: '1rem',
   		sm: '1.75rem',
-  		base: '2rem',
+  		base: '2.25rem',
   		md: '2.25rem',
   		lg: '2.5rem',
   		xl: '3rem',
@@ -84,14 +84,14 @@ const config = {
   			sm: '1rem'
   		},
   		fontFamily: {
-				sans: ["var(--segoe)", "sans-serif"],
-				display: ["var(--gestura)"],
+			sans: ["var(--figtree)", "sans-serif"],
+			display: ["var(--degular)", "sans-serif"],
   		},
   		typography: {
   			DEFAULT: {
   				css: {
-  					'--tw-prose-body': '#002533',
-  					'--tw-prose-headings': '#303F48',
+  					// '--tw-prose-body': '#002533',
+  					// '--tw-prose-headings': '#303F48',
   					fontSize: 'inherit',
   					lineHeight: 'inherit',
   					h1: {

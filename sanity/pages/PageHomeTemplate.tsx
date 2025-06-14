@@ -26,8 +26,56 @@ export const PageHomeType = definePageType({
       },
     },
     {
-      name: 'numbers',
-      title: 'Numbers',
+      name: 'introSecond',
+      title: 'Intro - 2',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'values',
+      title: 'Our Values',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'work',
+      title: 'Work for Us',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'advantages',
+      title: 'Advantages',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'health',
+      title: 'Health System',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'openStars',
+      title: 'Our Open Stars',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'application',
+      title: 'Application Process',
       options: {
         collapsible: true,
         collapsed: false,
@@ -92,6 +140,12 @@ export const PageHomeType = definePageType({
   ],
   fields: [
     defineField({
+      name: 'heroChip',
+      title: 'Chip',
+      type: 'string',
+      fieldset: 'hero',
+    }),
+    defineField({
       name: 'heroTitle',
       title: 'Hero Title',
       type: 'richtext',
@@ -100,12 +154,6 @@ export const PageHomeType = definePageType({
     defineField({
       name: 'heroCTA1',
       title: 'CTA 1',
-      type: 'button',
-      fieldset: 'hero',
-    }),
-    defineField({
-      name: 'heroCTA2',
-      title: 'CTA 2',
       type: 'button',
       fieldset: 'hero',
     }),
@@ -130,192 +178,264 @@ export const PageHomeType = definePageType({
     }),
 
     defineField({
-      name: 'numbersItems',
-      title: 'Numbers Items',
-      type: 'array',
-      fieldset: 'numbers',
-      validation: (Rule) => Rule.max(4),
-      of: [
-        defineArrayMember({
-          name: 'numbersItem',
-          title: 'Item',
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'number',
-              title: 'Number',
-              type: 'number',
-            }),
-            defineField({
-              name: 'text',
-              title: 'Text',
-              type: 'string',
-            }),
-          ]
-        })
-      ],
-    }),
-
-    defineField({
-      name: 'howChip',
+      name: 'introSecondChip',
       title: 'Chip',
       type: 'string',
-      fieldset: 'how',
+      fieldset: 'introSecond',
     }),
     defineField({
-      name: 'howText',
+      name: 'introSecondText',
       title: 'Text',
       type: 'richtext',
-      fieldset: 'how',
+      fieldset: 'introSecond',
     }),
     defineField({
-      name: 'howCTA',
+      name: 'introSecondCTA',
       title: 'CTA',
       type: 'button',
-      fieldset: 'how',
+      fieldset: 'introSecond',
     }),
 
     defineField({
-      name: 'trainingsChip',
+      name: 'valuesChip',
       title: 'Chip',
       type: 'string',
-      fieldset: 'trainings',
+      fieldset: 'values',
     }),
     defineField({
-      name: 'trainingsTitle',
+      name: 'valuesTitle',
       title: 'Title',
       type: 'richtext',
-      fieldset: 'trainings',
+      fieldset: 'values',
     }),
     defineField({
-      name: 'trainings1Title',
-      title: 'Title 1',
+      name: 'valuesFirstTextTitle',
+      title: 'First Field Title',
       type: 'string',
-      fieldset: 'trainings',
+      fieldset: 'values',
     }),
     defineField({
-      name: 'trainings1List',
-      title: 'List 1',
-      type: 'array',
-      fieldset: 'trainings',
-      of: [
-        defineArrayMember({
-          name: 'numbersItem',
-          title: 'Item',
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'text',
-              title: 'Text',
-              type: 'richtext',
-            }),
-          ]
-        })
-      ],
-    }),
-    defineField({
-      name: 'trainings1CTA',
-      title: 'CTA 1',
-      type: 'button',
-      fieldset: 'trainings',
-    }),
-    defineField({
-      name: 'trainings2Title',
-      title: 'Title 2',
-      type: 'string',
-      fieldset: 'trainings',
-    }),
-    defineField({
-      name: 'trainings2List',
-      title: 'List 2',
-      type: 'array',
-      fieldset: 'trainings',
-      of: [
-        defineArrayMember({
-          name: 'numbersItem',
-          title: 'Item',
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'text',
-              title: 'Text',
-              type: 'richtext',
-            }),
-          ]
-        })
-      ],
-    }),
-    defineField({
-      name: 'trainings2CTA',
-      title: 'CTA 2',
-      type: 'button',
-      fieldset: 'trainings',
-    }),
-
-    defineField({
-      name: 'testimonialsChip',
-      title: 'Chip',
-      type: 'string',
-      fieldset: 'testimonials',
-    }),
-    defineField({
-      name: 'testimonialsTitle',
-      title: 'Title',
+      name: 'valuesFirstText',
+      title: 'First Field Text',
       type: 'richtext',
-      fieldset: 'testimonials',
+      fieldset: 'values',
     }),
     defineField({
-      name: 'testimonials',
-      title: 'Testimonials',
-      type: 'reference',
-      to: [
-        {
-          type: 'testimonialList'
-        }
-      ],
-      fieldset: 'testimonials',
+      name: 'valuesSecondTextTitle',
+      title: 'Second Field Title',
+      type: 'string',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesSecondText',
+      title: 'Second Field Text',
+      type: 'richtext',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesThirdTextTitle',
+      title: 'Third Field Title',
+      type: 'string',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesThirdText',
+      title: 'Third Field Text',
+      type: 'richtext',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesFourthTextTitle',
+      title: 'Fourth Field Title',
+      type: 'string',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesFourthText',
+      title: 'Fourth Field Text',
+      type: 'richtext',
+      fieldset: 'values',
+    }),
+    defineField({
+      name: 'valuesCTA',
+      title: 'CTA',
+      type: 'button',
+      fieldset: 'values',
     }),
 
     defineField({
-      name: 'aboutChip',
-      title: 'Chip',
+      name: 'workTitle',
+      title: 'Title',
       type: 'string',
-      fieldset: 'about',
+      fieldset: 'work',
     }),
     defineField({
-      name: 'aboutText',
+      name: 'workFirstTextTitle',
+      title: 'First Field Title',
+      type: 'string',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workFirstText',
+      title: 'First Field Text',
+      type: 'richtext',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workSecondTextTitle',
+      title: 'Second Field Title',
+      type: 'string',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workSecondText',
+      title: 'Second Field Text',
+      type: 'richtext',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workThirdTextTitle',
+      title: 'Third Field Title',
+      type: 'string',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workThirdText',
+      title: 'Third Field Text',
+      type: 'richtext',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workFourthTextTitle',
+      title: 'Fourth Field Title',
+      type: 'string',
+      fieldset: 'work',
+    }),
+    defineField({
+      name: 'workFourthText',
+      title: 'Fourth Field Title',
+      type: 'richtext',
+      fieldset: 'work',
+    }),
+
+    defineField({
+      name: 'advantageChip',
+      title: 'Chip',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageText',
+      title: 'Header',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFirstText',
+      title: 'First Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFirstSubtitle',
+      title: 'First Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageSecondText',
+      title: 'Second Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageSecondSubtitle',
+      title: 'Second Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageThirdText',
+      title: 'Third Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageThirdSubtitle',
+      title: 'Third Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFourthText',
+      title: 'Fourth Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFourthSubtitle',
+      title: 'Fourth Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFifthText',
+      title: 'Fifth Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageFifthSubtitle',
+      title: 'Fifth Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageSixthText',
+      title: 'Sixth Check Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageSixthSubtitle',
+      title: 'Sixth Check Subtitle',
+      type: 'richtext',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageLastText',
+      title: 'Last Text',
+      type: 'string',
+      fieldset: 'advantages',
+    }),
+    defineField({
+      name: 'advantageCTA',
+      title: 'CTA',
+      type: 'button',
+      fieldset: 'advantages',
+    }),
+    
+    defineField({
+      name: 'healthChip',
+      title: 'Chip',
+      type: 'string',
+      fieldset: 'health',
+    }),
+    defineField({
+      name: 'healthText',
       title: 'Text',
       type: 'richtext',
-      fieldset: 'about',
+      fieldset: 'health',
     }),
     defineField({
-      name: 'aboutCTA',
-      title: 'CTA',
-      type: 'button',
-      fieldset: 'about',
-    }),
-
-    defineField({
-      name: 'ebooksChip',
-      title: 'Chip',
-      type: 'string',
-      fieldset: 'ebooks',
-    }),
-    defineField({
-      name: 'ebooksTitle',
-      title: 'Title',
-      type: 'richtext',
-      fieldset: 'ebooks',
-    }),
-    defineField({
-      name: 'ebooksItems',
-      title: 'eBooks',
+      name: 'health',
+      title: 'List',
       type: 'array',
-      fieldset: 'ebooks',
+      fieldset: 'health',
       of: [
         defineArrayMember({
-          name: 'ebooksItem',
-          title: 'eBook',
+          name: 'numbersItem',
+          title: 'Item',
           type: 'object',
           fields: [
             defineField({
@@ -324,73 +444,98 @@ export const PageHomeType = definePageType({
               type: 'string',
             }),
             defineField({
-              name: 'text',
-              title: 'Text',
-              type: 'string',
-            }),
-            defineField({
-              name: 'cta',
-              title: 'CTA',
-              type: 'button',
+              name: 'subtitle',
+              title: 'Subtitle',
+              type: 'richtext',
             }),
             defineField({
               name: 'image',
               title: 'Image',
               type: 'image',
             }),
-          ],
-        }),
+          ]
+        })
       ],
     }),
-
+    
     defineField({
-      name: 'faqTitle',
-      title: 'Title',
-      type: 'richtext',
-      fieldset: 'faq',
+      name: 'openStarsChip',
+      title: 'Chip',
+      type: 'string',
+      fieldset: 'openStars',
     }),
     defineField({
-      name: 'faqItems',
-      title: 'FAQ Items',
+      name: 'openStarsText',
+      title: 'HeaderText',
+      type: 'richtext',
+      fieldset: 'openStars',
+    }),
+    defineField({
+      name: 'openStarsFisrtTitle',
+      title: 'First Title',
+      type: 'string',
+      fieldset: 'openStars',
+    }),
+    defineField({
+      name: 'openStarsSecondTitle',
+      title: 'Second Title',
+      type: 'string',
+      fieldset: 'openStars',
+    }),
+    defineField({
+      name: 'openStarsThirdTitle',
+      title: 'Third Title',
+      type: 'string',
+      fieldset: 'openStars',
+    }),
+    
+    defineField({
+      name: 'applicationChip',
+      title: 'Chip',
+      type: 'string',
+      fieldset: 'application',
+    }),
+    defineField({
+      name: 'applicationText',
+      title: 'Text',
+      type: 'string',
+      fieldset: 'application',
+    }),
+    defineField({
+      name: 'application',
+      title: 'List',
       type: 'array',
-      fieldset: 'faq',
+      fieldset: 'application',
       of: [
         defineArrayMember({
-          name: 'faqItem',
-          title: 'FAQ Item',
+          name: 'numbersItem',
+          title: 'Item',
           type: 'object',
           fields: [
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+            }),
             defineField({
               name: 'title',
               title: 'Title',
               type: 'string',
             }),
             defineField({
-              name: 'text',
-              title: 'Text',
+              name: 'subtitle',
+              title: 'Subtitle',
               type: 'richtext',
             }),
-          ],
-        }),
+          ]
+        })
       ],
-    }),
-
-    defineField({
-      name: 'boxText',
-      title: 'Text',
-      type: 'richtext',
-      fieldset: 'box',
-    }),
-    defineField({
-      name: 'boxCTA',
-      title: 'CTA',
-      type: 'button',
-      fieldset: 'box',
     }),
   ],
 })
 
 export interface PageHomeSchema extends PageTemplateSchema {
+  heroChip: string;
   heroTitle: PortableTextBlock[];
   heroCTA1: GROQButton;
   heroCTA2: GROQButton;
@@ -399,53 +544,70 @@ export interface PageHomeSchema extends PageTemplateSchema {
   introText: PortableTextBlock[];
   introCTA: GROQButton;
 
-  numbersItems: {
-    number: number;
-    text: string;
-  }[];
+  introSecondChip: string;
+  introSecondText: PortableTextBlock[];
+  introSecondCTA: GROQButton;
 
-  howChip: string;
-  howText: PortableTextBlock[];
-  howCTA: GROQButton;
+  valuesChip: string;
+  valuesTitle: PortableTextBlock[];
+  valuesFirstTextTitle: string;
+  valuesFirstText: PortableTextBlock[];
+  valuesSecondTextTitle: string;
+  valuesSecondText: PortableTextBlock[];
+  valuesThirdTextTitle: string;
+  valuesThirdText: PortableTextBlock[];
+  valuesFourthTextTitle: string;
+  valuesFourthText: PortableTextBlock[];
+  valuesCTA: GROQButton;
 
-  trainingsChip: string;
-  trainingsTitle: PortableTextBlock[];
-  trainings1Title: string;
-  trainings1List: {
-    text: PortableTextBlock[];
-  }[];
-  trainings1CTA: GROQButton;
-  trainings2Title: string;
-  trainings2List: {
-    text: PortableTextBlock[];
-  }[];
-  trainings2CTA: GROQButton;
+  workTitle: string;
+  workFirstTextTitle: string;
+  workFirstText: PortableTextBlock[];
+  workSecondTextTitle: string;
+  workSecondText: PortableTextBlock[];
+  workThirdTextTitle: string;
+  workThirdText: PortableTextBlock[];
+  workFourthTextTitle: string;
+  workFourthText: PortableTextBlock[];
 
-  testimonialsChip: string;
-  testimonialsTitle: PortableTextBlock[];
-  testimonials: ITestimonialList;
-
-  aboutChip: string;
-  aboutText: PortableTextBlock[];
-  aboutCTA: GROQButton;
-
-  ebooksChip: string;
-  ebooksTitle: PortableTextBlock[];
-  ebooksItems: {
+  advantageChip: string;
+  advantageText: PortableTextBlock[];
+  advantageFirstText: string;
+  advantageFirstSubtitle: PortableTextBlock[];
+  advantageSecondText: string;
+  advantageSecondSubtitle: PortableTextBlock[];
+  advantageThirdText: string;
+  advantageThirdSubtitle: PortableTextBlock[];
+  advantageFourthText: string;
+  advantageFourthSubtitle: PortableTextBlock[];
+  advantageFifthText: string;
+  advantageFifthSubtitle: PortableTextBlock[];
+  advantageSixthText: string;
+  advantageSixthSubtitle: PortableTextBlock[];
+  advantageLastText: string;
+  advantageCTA: GROQButton;
+  
+  healthChip: string;
+  healthText: PortableTextBlock[];
+  health: {
     title: string;
-    text: string;
-    cta: GROQButton;
+    subtitle: PortableTextBlock[];
     image: GROQImage;
   }[];
-
-  faqTitle: PortableTextBlock[];
-  faqItems: {
+  
+  openStarsChip: string;
+  openStarsText: PortableTextBlock[];
+  openStarsFisrtTitle: string;
+  openStarsSecondTitle: string;
+  openStarsThirdTitle: string;
+ 
+  applicationChip: string;
+  applicationText: string[];
+  application: {
+    image: GROQImage;
     title: string;
-    text: PortableTextBlock[];
+    subtitle: PortableTextBlock[];
   }[];
-
-  boxText: PortableTextBlock[];
-  boxCTA: GROQButton;
 }
 
 export class PageHomeTemplate implements PageTemplate<PageHomeSchema> {
@@ -459,6 +621,7 @@ export class PageHomeTemplate implements PageTemplate<PageHomeSchema> {
       _rev,
       ${BasePageQuery},
       
+      heroChip,
       heroTitle,
       heroCTA1${GROQButtonSchema},
       heroCTA2${GROQButtonSchema},
@@ -466,54 +629,71 @@ export class PageHomeTemplate implements PageTemplate<PageHomeSchema> {
       introChip,
       introText,
       introCTA${GROQButtonSchema},
+
+      introSecondChip,
+      introSecondText,
+      introSecondCTA${GROQButtonSchema},
+
+      valuesChip,
+      valuesTitle,
+      valuesFirstTextTitle,
+      valuesFirstText,
+      valuesSecondTextTitle,
+      valuesSecondText,
+      valuesThirdTextTitle,
+      valuesThirdText,
+      valuesFourthTextTitle,
+      valuesFourthText,
+      valuesCTA${GROQButtonSchema},
+
+      workTitle,
+      workFirstTextTitle,
+      workFirstText,
+      workSecondTextTitle,
+      workSecondText,
+      workThirdTextTitle,
+      workThirdText,
+      workFourthTextTitle,
+      workFourthText,
+
+      advantageChip,
+      advantageText,
+      advantageFirstText,
+      advantageFirstSubtitle,
+      advantageSecondText,
+      advantageSecondSubtitle,
+      advantageThirdText,
+      advantageThirdSubtitle,
+      advantageFourthText,
+      advantageFourthSubtitle,
+      advantageFifthText,
+      advantageFifthSubtitle,
+      advantageSixthText,
+      advantageSixthSubtitle,
+      advantageLastText,
+      advantageCTA${GROQButtonSchema},
       
-      numbersItems[]{
-        number,
-        text
-      },
-      
-      howChip,
-      howText,
-      howCTA${GROQButtonSchema},
-      
-      trainingsChip,
-      trainingsTitle,
-      trainings1Title,
-      trainings1List[]{
-        text
-      },
-      trainings1CTA${GROQButtonSchema},
-      trainings2Title,
-      trainings2List[]{
-        text
-      },
-      trainings2CTA${GROQButtonSchema},
-      
-      aboutChip,
-      aboutText,
-      aboutCTA${GROQButtonSchema},
-      
-      testimonialsChip,
-      testimonialsTitle,
-      testimonials->${TestimonialListSchema},
-      
-      ebooksChip,
-      ebooksTitle,
-      ebooksItems[]{
+      healthChip,
+      healthText,
+      health[]{
         title,
-        text,
-        cta${GROQButtonSchema},
+        subtitle,
         image${GROQImageSchema},
       },
       
-      faqTitle,
-      faqItems[]{
+      applicationChip,
+      applicationText,
+      application[]{
+        image${GROQImageSchema},
         title,
-        text,
+        subtitle,
       },
 
-      boxText,
-      boxCTA${GROQButtonSchema},
+      openStarsChip,
+      openStarsText,
+      openStarsFisrtTitle,
+      openStarsSecondTitle,
+      openStarsThirdTitle,
     }
   `;
   component(data: PageHomeSchema): JSX.Element {

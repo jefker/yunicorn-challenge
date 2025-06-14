@@ -12,6 +12,7 @@ import {token} from "@/sanity/env";
 import { BasePageQuery } from "@/sanity/globals/PageGlobals";
 import { IPageSettings } from "@/sanity/lib/types";
 import { PortableTextBlock } from "@portabletext/react";
+import React from "react";
 
 export const dynamicParams = false
 
@@ -323,35 +324,20 @@ export default async function Page({params}: { params: { slug: string[] } }) {
     // }
   }
 
+  const renderedComponent = template?.template?.component(pageData?.result ?? {});
+  const isValidReactElement = React.isValidElement(renderedComponent);
+
   return (
-    <>
-      {
-        pageData?.result != null && isDraft ? (
-          <>
-            <PreviewProvider token={token}>
-              <PageProvider url={url} init={pageData} query={query ?? ''} draftMode={isDraft}>
-                <>
-                  { template?.template?.component(pageData?.result ?? {}) ??
-                    (
-                      <div>
-                        <h1>Page not found</h1>
-                      </div>
-                    )}
-                </>
-              </PageProvider>
-            </PreviewProvider>
-          </>
-        ) : (
-          <>
-            { template?.template?.component(pageData?.result ?? {}) ??
-              (
-                <div>
-                  <h1>Page not found</h1>
-                </div>
-              )}
-          </>
-        )
-      }
-    </>
-  )
+  <>
+    {pageData?.result != null && isDraft ? (
+      <PreviewProvider token={token}>
+        <PageProvider url={url} init={pageData} query={query ?? ''} draftMode={isDraft}>
+          {isValidReactElement ? renderedComponent : <div><h1>Page not found</h1></div>}
+        </PageProvider>
+      </PreviewProvider>
+    ) : (
+      isValidReactElement ? renderedComponent : <div><h1>Page not found</h1></div>
+    )}
+  </>
+  );
 }

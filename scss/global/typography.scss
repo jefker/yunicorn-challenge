@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @mixin h1 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 400;
+  letter-spacing: 0.4rem;
   margin-bottom: 1rem;
 
   @screen sm {
@@ -20,50 +21,52 @@
 }
 
 @mixin h2 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 400;
+  letter-spacing: 1.3px;
   margin-bottom: 1rem;
-
+  
   @screen sm {
     font-size: 5rem;
   }
-
+  
   @screen lg {
-    font-size: 8rem;
+    font-size: 7rem;
     margin-bottom: 1.5rem;
   }
 }
 
 @mixin h3 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 400;
   margin-bottom: 1rem;
-
+  
   @screen lg {
     margin-bottom: 1.5rem;
   }
 }
 
 @mixin h4 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 3rem;
-  line-height: 1.1;
+  line-height: 1.2;
+  letter-spacing: 1.6px;
   font-weight: 400;
 }
 
 @mixin h5 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 2.75rem;
   line-height: 1.1;
   font-weight: 400;
 }
 
 @mixin h6 {
-  font-family: var(--gestura), serif;
+  font-family: var(--degular), serif;
   font-size: 2.5rem;
   line-height: 1.1;
   font-weight: 400;
@@ -125,11 +128,6 @@ h6 {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    @apply text-[#002533] text-opacity-80;
-
-    @screen lg {
-      font-size: 2.5rem;
-    }
   }
 }
 
@@ -137,7 +135,6 @@ p {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  margin-bottom: 1.2em;
 }
 
 .text-highlight-light {

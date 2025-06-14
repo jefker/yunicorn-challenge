@@ -79,5 +79,11 @@ export const Header = defineType({
         }),
       ]
     }),
+
+    defineField({
+      name: 'cta',
+      title: 'CTA',
+      type: 'button',
+    }),
   ]
 });
